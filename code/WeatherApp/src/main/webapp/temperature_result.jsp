@@ -66,8 +66,8 @@
 </div>
 
 <div style="padding-top: 30px;">
-  <a href="#" class="btn btn-success">Go Back</a>
-  <a href="#" class="btn btn-primary">Go Home</a>
+  <a href="check_avg_temp.jsp" class="btn btn-success">Go Back</a>
+  <a href="index.jsp" class="btn btn-primary">Go Home</a>
 </div>
 </body>
 </html>

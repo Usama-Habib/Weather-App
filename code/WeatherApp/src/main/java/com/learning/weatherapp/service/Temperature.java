@@ -4,10 +4,31 @@ import com.learning.weatherapp.data.CitiesData;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
+/**
+ * <h1>Find Temperature</h1>
+ * The find_temperature program implements an application that
+ * simply finds the temperature difference compare to the average temperature
+ * of the given city.
+ * It returns how much is the difference compare to given temperature value as an output.
+ * <p>
+ * <b>Note:</b> It only provide information about those cities, whose data is available to it.
+ *
+ *
+ * @author  Author-Name
+ * @version 1.0
+ * @since   2023-05-19
+ */
 public class Temperature {
 
+    /**
+     * This method is used to find the temperature. It takes city name and time of the day (i.e. Morning,Evening)
+     * and temperature value as an input.
+     * @param city This is the first paramter to find_temperature method
+     * @param time_of_day  This is the second parameter to find_temperature method
+     * @param temperature This is the third parameter to find_temperature method
+     * @return String This returns String value represent the difference in temperature compare to the input temp of a city.
+     */
     // Finding temperature difference of a city
     public String find_temperature(String city, String time_of_day, int temperature){
         Map<String, List<Map<String, Integer>>> citiesTemperature = getCitiesTemperature();

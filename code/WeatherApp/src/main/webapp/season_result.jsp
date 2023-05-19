@@ -39,13 +39,6 @@
         </div>
     </div>
 
-<%--    <div class="card" style="width: 20rem;">--%>
-<%--        <img src="..." class="card-img-top" alt="...">--%>
-<%--        <div class="card-body">--%>
-<%--            <h5 class="card-title">{Month list}</h5>--%>
-<%--            <p class="card-text">{Season Name}</p>--%>
-<%--        </div>--%>
-<%--    </div>--%>
 </div>
 <div style="padding-top: 30px;">
     <a href="check_season.jsp" class="btn btn-success">Go Back</a>
