@@ -15,14 +15,6 @@ import java.util.Map;
 
 @WebServlet(name = "cityServlet", value = "/check-temp")
 public class CityTempServlet extends HttpServlet {
-
-    private Map<String, List<Map<String,Integer>>> cities;
-
-
-    @Override
-    public void init() throws ServletException {
-        cities = new CitiesData().getCities();
-    }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String city = req.getParameter("city").strip().replace("_"," ");

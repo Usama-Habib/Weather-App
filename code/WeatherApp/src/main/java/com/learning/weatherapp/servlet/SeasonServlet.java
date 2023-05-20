@@ -18,14 +18,6 @@ import java.util.Map;
 
 @WebServlet(name = "seasonServlet", value = "/check-season")
 public class SeasonServlet extends HttpServlet {
-
-    private Map<String, List<Map<String, SeasonDuration>>> seasons;
-
-    @Override
-    public void init() throws ServletException {
-        seasons = new SeasonData().getSeasons();
-    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
