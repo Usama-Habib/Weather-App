@@ -101,8 +101,8 @@ Following are the technologies we have use in this project:
 
 **Module descriptions:**
 
-The Weather App can be split down further into number of small modules,
-but for the sake of simplicity and better understanding I\'ve focused on
+The Weather App can be further split down into number of small modules,
+but for the sake of simplicity and better understanding We have focused on
 following main modules as shown below.
 
 1.  **Data**
