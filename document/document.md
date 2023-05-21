@@ -14,24 +14,80 @@ This app has two major goals.
 2)  Find City's temperature difference from its average.
 
 -   Season of Country
+    
+    Below is the code snippet for Season Module
+    
+  ```sh
+//  Function to find the season of a country in a particular month
+    public String find_season(String country, int month){
 
-> ![](vertopal_3036063fb34a4775b8581ac7ac4029af/media/image1.png){width="3.472392825896763in"
-> height="1.5299300087489063in"}
+        Map<String, List<Map<String, SeasonDuration>>> seasonsInfo = getSeasonsInfo();
 
-![](vertopal_3036063fb34a4775b8581ac7ac4029af/media/image2.png){width="4.509027777777778in"
-height="1.8284722222222223in"}![](vertopal_3036063fb34a4775b8581ac7ac4029af/media/image3.png){width="4.563415354330709in"
-height="2.356299212598425in"}
+        if(month > 12 || month < 1)
+            return "month_invalid";
+        if(!seasonsInfo.containsKey(country.toLowerCase()))
+            return "country_invalid";
+        List<Map<String, SeasonDuration>> seasonMap = seasonsInfo.get(country.toLowerCase());
+        for (int i = 0; i < seasonMap.size(); i++) {
+
+            Map<String, SeasonDuration> stringSeasonDurationMap = seasonMap.get(i);
+            Map.Entry<String, SeasonDuration> next = stringSeasonDurationMap.entrySet().iterator().next();
+            int start_month = next.getValue().getArr()[0][0];
+            int end_month = next.getValue().getArr()[1][0];
+            if(start_month < end_month){
+                if(month >= start_month && month <= end_month){
+                    return next.getKey();
+                }
+            }else{
+                if(month >= start_month || month <= end_month){
+                    return next.getKey();
+                }
+            }
+        }
+        return "invalid";
+    }
+
+```
+
 
 -   Find temperature difference
 
-![](vertopal_3036063fb34a4775b8581ac7ac4029af/media/image4.png){width="3.893471128608924in"
-height="1.7691163604549431in"}
+```sh
+ // Finds temperature difference of a city
+    public String find_temperature(String city, String time_of_day, int temperature){
+        Map<String, List<Map<String, Integer>>> citiesTemperature = getCitiesTemperature();
+        String message = "";
+        // check if city exists
+        if(!citiesTemperature.containsKey(city.replace("_"," ").toLowerCase())){
+            return "city_invalid";
+        }
+        if(temperature > 60 || temperature < -20){
+            return "temperature_invalid";
+        }
 
-![](vertopal_3036063fb34a4775b8581ac7ac4029af/media/image5.png){width="4.766645888013998in"
-height="2.2463331146106738in"}
+        int average_temp = 0;
+        List<Map<String, Integer>> daytimeList = citiesTemperature.get(city.replace("_", " ").toLowerCase());
+        for (int i = 0; i < daytimeList.size(); i++) {
+            if(daytimeList.get(i).containsKey(time_of_day.toLowerCase())){
+                average_temp = daytimeList.get(i).values().iterator().next();
+            }
+        }
 
-![](vertopal_3036063fb34a4775b8581ac7ac4029af/media/image6.png){width="5.259150262467192in"
-height="1.4136778215223098in"}
+        int diff = temperature - average_temp;
+
+        if(diff > 5) {
+            message = "Temperature is more than 5°C above average.";
+        } else if(diff < -5) {
+            message = "Temperature is more than 5°C below average.";
+        } if (diff > 0) {
+            return  "Above average " + message;
+        } else if (diff < 0) {
+            return  "Below average " + message;
+        } else {
+            return "Equal to average";
+        }
+    }
+```
 
 Following are the technologies we have use in this project:
 
