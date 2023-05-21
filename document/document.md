@@ -165,11 +165,11 @@ following main modules as shown below.
 
 Below is a typical behavior it follows:
 ```sh
-User =\>
-        Web Browser (View Module) =\>
-               Server (Controller Module) =\>
-                        Processing (Service) =\>
-                                Return View (View Module)
+User =>
+        Web Browser (View Module) =>
+                    Server (Controller Module) =>
+                               Processing (Service) =>
+                                        Return View (View Module)
 ```
 -   *Input*: Takes input as part of request parameter
 
