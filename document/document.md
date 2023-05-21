@@ -107,7 +107,7 @@ following main modules as shown below.
 
 1.  **Data**
 
-**[ Description ]**
+**Description**
 
 -   *Name*: Weather Data
 
@@ -131,7 +131,7 @@ following main modules as shown below.
 
 2.  **Service**
 
-**[Description]{.underline}**
+**Description**
 
 -   *Name*: Weather App Service
 
@@ -151,7 +151,7 @@ following main modules as shown below.
 
 3.  **Controller**
 
-**[Description]{.underline}**
+**Description**
 
 -   *Name*: Weather App Servlet
 
@@ -163,25 +163,21 @@ following main modules as shown below.
 
 -   *Behave*:
 
-> Below is a typical behavior it follows:
->
-> User =\>
->
-> Web Browser (View Module) =\>
->
-> Server (Controller Module) =\>
->
-> Processing (Service) =\>
->
-> Return View (View Module)
-
+Below is a typical behavior it follows:
+```sh
+User =\>
+        Web Browser (View Module) =\>
+               Server (Controller Module) =\>
+                        Processing (Service) =\>
+                                Return View (View Module)
+```
 -   *Input*: Takes input as part of request parameter
 
 -   *Output*: Redirect to the View Module.
 
 4.  **View**
 
-**[Description]{.underline}**
+**Description**
 
 -   *Name*: Weather App View
 
@@ -214,7 +210,9 @@ One can opt manual approach, here are following steps:
     -   Go inside the project directory of your project (outside the
         WEB-INF), then write the following command:
 
-> jar -cvf projectname.war \*  
+```sh
+    jar -cvf projectname.war \*  
+```
 
 -   If Tomcat is running, stop/kill it.
 
@@ -230,12 +228,12 @@ One can opt manual approach, here are following steps:
 
 -   Start your tomcat.
 
-**[How good Modularity:]{.underline}**
+**How good Modularity:**
 
-> The Weather App is well organized. Code is written using Java
-> programming language. Application is divide into various packages,
-> where each package serves a specific purpose. Following are the
-> packages in this app:
+The Weather App is well organized. Code is written using Java
+programming language. Application is divide into various packages,
+where each package serves a specific purpose. Following are the
+packages in this app:
 
 -   Data: Hold/Server data to the app.
 
@@ -250,7 +248,7 @@ One can opt manual approach, here are following steps:
 -   Test: It contains all the test cases.
 
 Here is the Application\'s directory in tree structure.
-
+```sh
 > ──src
 >
 > ├───main
@@ -290,8 +288,8 @@ Here is the Application\'s directory in tree structure.
 > │ └───weatherapp
 >
 > └───resources
-
-**[Review Checklist]{.underline}**
+```
+**Review Checklist**
 
 -   Read all the requirements and understand them well.
 
