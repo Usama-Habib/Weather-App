@@ -249,45 +249,26 @@ packages in this app:
 
 Here is the Application\'s directory in tree structure.
 ```sh
-> ──src
->
-> ├───main
->
-> │ ├───java
->
-> │ │ └───com
->
-> │ │ └───learning
->
-> │ │ └───weatherapp
->
-> │ │ ├───data
->
-> │ │ ├───dto
->
-> │ │ ├───service
->
-> │ │ └───servlet
->
-> │ ├───resources
->
-> │ └───webapp
->
-> │ ├───images
->
-> │ └───WEB-INF
->
-> └───test
->
-> ├───java
->
-> │ └───com
->
-> │ └───learning
->
-> │ └───weatherapp
->
-> └───resources
+──src
+    ├───main
+    │ ├───java
+    │ │ └───com
+    │ │     └───learning
+    │ │         └───weatherapp
+    │ │                 ├───data
+    │ │                 ├───dto
+    │ │                 ├───service
+    │ │                 └───servlet
+    │ ├───resources
+    │ └───webapp
+    │       ├───images
+    │       └───WEB-INF
+    └───test
+          ├───java
+          |     └───com
+          |         └───learning
+          |             └───weatherapp
+          |───resources
 ```
 **Review Checklist**
 
