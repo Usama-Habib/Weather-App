@@ -92,11 +92,8 @@ This app has two major goals.
 Following are the technologies we have use in this project:
 
 -   Java 17
-
 -   Apache Tomcat 9.0
-
 -   JSP
-
 -   Servlets
 
 **Module descriptions:**
@@ -108,9 +105,7 @@ following main modules as shown below.
 1.  **Data**
 
     **Description**
-
 -   *Name*: Weather Data
-
 -   *Objective*: As the name suggest this module is responsible for
     holding and providing the data, required by the entire web
     application. Since at this stage our web application aims to serve
@@ -118,49 +113,35 @@ following main modules as shown below.
     deviation with an average temperature of a city. Therefore this
     module currently responsible to provide us SeasonData and
     CitiesData.
-
 -   *Behave*: For the sake of simplicity, I\'ve added a dummy data
     inside this module. Therefore it's not interacting with any external
     system (i.e. file or database).
-
--   *Input*: As mentioned, module has hard-coded data values. Hence it
-    does not take data as an input.
-
--   *Output*: Other module can access it, by calling its public function
-    which return data value.
+-   *Input*: As mentioned, module has hard-coded data values. Hence it does not take data as an input.
+-   *Output*: Other module can access it, by calling its public function which return data value.
 
 2.  **Service**
 
     **Description**
-
 -   *Name*: Weather App Service
-
 -   *Objective*: This module is like an engine of the entire
     application. This is where the actual implementation exists. It
     mainly serve two purposes. Finding a country\'s season and Find
     temperature difference of a city with its average temperature.
-
 -   *Behave*: Module interact with Data module (described above) to
     perform its action against the input data such as finding a city or
     a country.
-
 -   *Input*: This module takes input as an argument.
-
--   *Output*: After processing, both sub-modules (find_season,
-    find_temp) returns the output as string value.
+-   *Output*: After processing, both sub-modules (find_season, find_temp) returns the output as string value.
 
 3.  **Controller**
 
     **Description**
-
 -   *Name*: Weather App Servlet
-
 -   *Objective*: Module enhance app\'s basic functionality. It is
     in-charge of managing operations and responding to user requests
     that originate from HTML pages or View Modules. Internally, it
     transmits data from the View Module to the Service Module and then
     correctly updates the View.
-
 -   *Behave*:
 
 Below is a typical behavior it follows:
@@ -172,27 +153,19 @@ User =>
                                         Return View (View Module)
 ```
 -   *Input*: Takes input as part of request parameter
-
 -   *Output*: Redirect to the View Module.
 
 4.  **View**
-
     **Description**
 
 -   *Name*: Weather App View
-
 -   *Objective*: It is responsible to serve web pages. It allow users to
     interact with a web interface. Users can select UI elements using
     cursor to run the application. Moreover, it uses visuals (UI) for an
     interactive user experience throughout.
-
 -   *Behave*: User of this application comes in contact with the module
-    via browser. It further communicate/pass user input to the
-    Controller for processing.
-
--   *Input*: User interact with HTML or JSP elements i.e. (text,
-    drop-down and buttons) through keyboard and mouse.
-
+    via browser. It further communicate/pass user input to the Controller for processing.
+-   *Input*: User interact with HTML or JSP elements i.e. (text, drop-down and buttons) through keyboard and mouse.
 -   *Output*: Return output to the screen as HTML or JSP page.
 
 **Modularity**
@@ -206,26 +179,17 @@ the tomcat's deploy folder.
 One can opt manual approach, here are following steps:
 
 -   Create a WAR file
-
-    -   Go inside the project directory of your project (outside the
-        WEB-INF), then write the following command:
+    -   Go inside the project directory of your project (outside the WEB-INF), then write the following command:
 
 ```sh
     jar -cvf projectname.war \*  
 ```
 
 -   If Tomcat is running, stop/kill it.
-
--   Go to the tomcat installation folder (this must be *C:\\Documents
-    and Settings\\tomcat9x* for you), let\'s call it \<tomcat\>.
-
--   In \<tomcat\>, delete the *temp* and *work* folders. They only
-    contain temporary files.
-
--   If it\'s a *jar* file maybe is for configuration, so drop it
-    in \<tomcat\>/lib folder. If it\'s a *war* file, drop it
-    in \<tomcat\>/deploy or in \<tomcat\>/webapps folder.
-
+-   Go to the tomcat installation folder (this must be *C:\\Documents and Settings\\tomcat9x* for you), let\'s call it \<tomcat\>.
+-   In \<tomcat\>, delete the *temp* and *work* folders. They only contain temporary files.
+-   If it\'s a *jar* file maybe is for configuration, so drop it in \<tomcat\>/lib folder. 
+    If it\'s a *war* file, drop it in \<tomcat\>/deploy or in \<tomcat\>/webapps folder.
 -   Start your tomcat.
 
 **How good Modularity:**
@@ -236,15 +200,10 @@ where each package serves a specific purpose. Following are the
 packages in this app:
 
 -   Data: Hold/Server data to the app.
-
 -   DTO: Data Structure.
-
 -   Service: Business logic for find_temp and find_season.
-
 -   Servlet/Controller: communicate between Service and Web Module.
-
 -   Web/HTML pages: HTML page and views are defined here.
-
 -   Test: It contains all the test cases.
 
 Here is the Application\'s directory in tree structure.
