@@ -107,7 +107,7 @@ following main modules as shown below.
 
 1.  **Data**
 
-**Description**
+    **Description**
 
 -   *Name*: Weather Data
 
@@ -131,7 +131,7 @@ following main modules as shown below.
 
 2.  **Service**
 
-**Description**
+    **Description**
 
 -   *Name*: Weather App Service
 
@@ -151,7 +151,7 @@ following main modules as shown below.
 
 3.  **Controller**
 
-**Description**
+    **Description**
 
 -   *Name*: Weather App Servlet
 
@@ -177,7 +177,7 @@ User =>
 
 4.  **View**
 
-**Description**
+    **Description**
 
 -   *Name*: Weather App View
 
@@ -273,34 +273,17 @@ Here is the Application\'s directory in tree structure.
 **Review Checklist**
 
 -   Read all the requirements and understand them well.
-
 -   Prepare a design (enough to meet the application\'s basic goals).
-
 -   Think about what modules you may need in this application.
-
 -   Document them all.
-
--   Brainstorm to identify suitable branches names for your version
-    control.
-
+-   Brainstorm to identify suitable branches names for your version control.
 -   Start writing code.
-
--   Initialize a Git directory and add the basic app to branch named
-    \'basic-version\'
-
--   Enhance your code to make it more user friendly and add the updated
-    code to a new branch named \'complete-version\'
-
+-   Initialize a Git directory and add the basic app to branch named\'basic-version\'
+-   Enhance your code to make it more user friendly and add the updated code to a new branch named \'complete-version\'
 -   Write test cases to see if everything works or behave as intended.
-
-    -   At this stage you can perform rigorous testing on your
-        application to see how well it perform.
-
+    -   At this stage you can perform rigorous testing on your application to see how well it perform.
     -   Test with valid and invalid inputs.
-
--   If you find any ambiguity fix those issues and repeat the tests
-    again.
-
+-   If you find any ambiguity fix those issues and repeat the tests again.
 -   If everything works fine, Deploy the app.
 
 **Black-box test cases**
