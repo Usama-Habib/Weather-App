@@ -294,8 +294,44 @@ Assumption: We are providing a valid country name
 
 **White-box test cases**
 
+One can test the quality or internal design of code. Let's say we perform white box test to ensure system return the correct records that we have for demonstration purpose we will check the season data size in our system.
+
 **Test implementation and execution**
+
+Black Box Test Implementation
+
+*Equivalence Partitioning:* Below program demonstrate the equivalence partitioning
+
+**INVALID**: month value below 1
+Assertions.*assertEquals*("month\_invalid",seasonService.find\_season("Pakistan",-5));
+
+**VALID**: month value between 1-12        Assertions.assertNotEquals("month\_invalid",seasonService.find\_season("Pakistan",7));
+
+*Boundary value analysis:* Below program demonstrate the equivalence partitioning
+
+**INVALID**: month value above 12 Assertions.assertEquals("month\_invalid",seasonService.find\_season("Pakistan",14));
+
+**INVALID**:  month shouldn’t exceed 12 or can't be below 1 Assertions.assertEquals("month\_invalid",seasonService.find\_season("Pakistan",13));
+Assertions.assertEquals("month\_invalid",seasonService.find\_season("Pakistan",0));
+
+**VALID**:  month should be between 1 and 12 Assertions.assertNotEquals("month\_invalid",seasonService.find\_season("Pakistan", 1));
+Assertions.assertNotEquals("month\_invalid",seasonService.find\_season("Pakistan", 12));
+
+**White Box Test case**
+
+final int SEASONS\_DATA\_SIZE = 4;
+Assertions.assertEquals(SEASONS\_DATA\_SIZE, seasonService.getSeasonsInfo().size());
 
 **Version control**
 
+Application has following three branches
+
+- basic-version (hold all the fundamental service)
+- complete-version (improved version. Better user experience through JSP/HTML pages)
+- main (production-ready-version, contains test case, documentation etc.)
+
+
 **Ethics**
+
+Dependence on the system could have negative effects if the system is fed with inaccurate data. As a result, it is advised to conduct a little additional investigation before accepting the results it produced.
+
