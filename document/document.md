@@ -281,14 +281,14 @@ Assumption: We are providing a valid country name
 
 - **BOUNDARY VALUE.**
 
-|**Boundary Value Analysis (Season)**|
-| :-: |
+||**Boundary Value Analysis (Season)**||
+| :-: | :-: | :-: |
 |Invalid|Valid|Invalid|
 |month = 0|1 – 12|month = 13|
 
 
-|**Boundary Value Analysis (Temperature)**|
-| :-: |
+||**Boundary Value Analysis (Temperature)**||
+| :-: | :-: | :-: |
 |Invalid|Valid|Invalid|
 |temperature = -21|-20 – 60|Temperature = 61|
 
