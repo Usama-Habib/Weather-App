@@ -48,7 +48,15 @@ This app has two major goals.
     }
 
 ```
+Here is how you will access the above function
 
+```sh
+String country = "Pakistan";
+int month = 5;
+String result = find_season(country,month);
+// Displays the result of execution
+System.out.println(result);
+```
 
 -   Find temperature difference
 
@@ -87,6 +95,16 @@ This app has two major goals.
             return "Equal to average";
         }
     }
+```
+Here is how you will access the above function
+
+```sh
+String city = "London";
+String day_time = "Morning";
+String temperature = 19;
+String result = find_temperature(city, day_time, temperature);
+// Displays the result of execution
+System.out.println(result);
 ```
 
 Following are the technologies we have use in this project:
@@ -244,6 +262,8 @@ Here is the Application\'s directory in tree structure.
     -   Test with valid and invalid inputs.
 -   If you find any ambiguity fix those issues and repeat the tests again.
 -   If everything works fine, Deploy the app.
+
+**Black-box test cases**
 
 **Black-box test cases**
 
