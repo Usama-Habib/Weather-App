@@ -55,7 +55,7 @@ String country = "Pakistan";
 int month = 5;
 String result = find_season(country,month);
 // Displays the result of execution
-System.out.println(result);
+System.out.println(result); // SUMMER
 ```
 
 -   Find temperature difference
@@ -104,7 +104,7 @@ String day_time = "Morning";
 String temperature = 19;
 String result = find_temperature(city, day_time, temperature);
 // Displays the result of execution
-System.out.println(result);
+System.out.println(result); // Above average Temperature is more than 5°C above average.
 ```
 
 Following are the technologies we have use in this project:
