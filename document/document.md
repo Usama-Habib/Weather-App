@@ -265,6 +265,61 @@ Here is the Application\'s directory in tree structure.
 
 **Black-box test cases**
 
+A black box test can simulate user activity and see if the system
+delivers on its promises. In this application we have covered following:
+
+Equivalence partitioning
+
+Boundary value analysis
+
+-   **EQUIVALENCE PARTITIONING**
+
+> In this type of testing we divide the input domain into classes of
+> data (valid and invalid range). Here we will take two invalid and one
+> valid equivalence classes.
+>
+> Assumption: We are providing a valid country name
+
+  -----------------------------------------------------------------------
+  **Equivalence                                   
+  Partitioning (Season)**                         
+  ----------------------- ----------------------- -----------------------
+  Invalid                 Valid                   Invalid
+
+  month \< 1              1-12                    month \> 12
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+  **Equivalence                                   
+  Partitioning                                    
+  (Temperature)**                                 
+  ----------------------- ----------------------- -----------------------
+  Invalid                 Valid                   Invalid
+
+  temperature \< -20      -20 -- 60               temperature \> 60
+  -----------------------------------------------------------------------
+
+-   **BOUNDARY VALUE.**
+
+  -----------------------------------------------------------------------
+  **Boundary Value                                
+  Analysis (Season)**                             
+  ----------------------- ----------------------- -----------------------
+  Invalid                 Valid                   Invalid
+
+  month = 0               1 -- 12                 month = 13
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+  **Boundary Value                                
+  Analysis                                        
+  (Temperature)**                                 
+  ----------------------- ----------------------- -----------------------
+  Invalid                 Valid                   Invalid
+
+  temperature = -21       -20 -- 60               Temperature = 61
+  -----------------------------------------------------------------------
+
 **Black-box test cases**
 
 **White-box test cases**
