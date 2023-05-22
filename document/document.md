@@ -304,32 +304,32 @@ Black Box Test Implementation
 
 **INVALID**: month value below 1
 ```sh
-Assertions.*assertEquals*("month\_invalid",seasonService.find\_season("Pakistan",-5));
+Assertions.*assertEquals*("month_invalid",seasonService.find_season("Pakistan",-5));
 ```
 **VALID**: month value between 1-12        
 ```sh
-Assertions.assertNotEquals("month\_invalid",seasonService.find\_season("Pakistan",7));
+Assertions.assertNotEquals("month_invalid",seasonService.find_season("Pakistan",7));
 ```
 *Boundary value analysis:* Below program demonstrate the equivalence partitioning
 
 **INVALID**: month value above 12 
 ```sh
-Assertions.assertEquals("month\_invalid",seasonService.find\_season("Pakistan",14));
+Assertions.assertEquals("month_invalid",seasonService.find_season("Pakistan",14));
 ```
 **INVALID**:  month shouldn’t exceed 12 or can't be below 1 
 ```sh
-Assertions.assertEquals("month\_invalid",seasonService.find\_season("Pakistan",13));
-Assertions.assertEquals("month\_invalid",seasonService.find\_season("Pakistan",0));
+Assertions.assertEquals("month_invalid",seasonService.find_season("Pakistan",13));
+Assertions.assertEquals("month_invalid",seasonService.find_season("Pakistan",0));
 ```
 **VALID**:  month should be between 1 and 12 
 ```sh
-Assertions.assertNotEquals("month\_invalid",seasonService.find\_season("Pakistan", 1));
-Assertions.assertNotEquals("month\_invalid",seasonService.find\_season("Pakistan", 12));
+Assertions.assertNotEquals("month_invalid",seasonService.find_season("Pakistan", 1));
+Assertions.assertNotEquals("month_invalid",seasonService.find_season("Pakistan", 12));
 ```
 **White Box Test case**
 ```sh
-final int SEASONS\_DATA\_SIZE = 4;
-Assertions.assertEquals(SEASONS\_DATA\_SIZE, seasonService.getSeasonsInfo().size());
+final int SEASONS_DATA_SIZE = 4;
+Assertions.assertEquals(SEASONS_DATA_SIZE, seasonService.getSeasonsInfo().size());
 ```
 **Version control**
 
