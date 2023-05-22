@@ -12,8 +12,27 @@ public class SeasonTest {
     public void testSeason(){
 
         /*
-        * BOUNDARY VALUE ANALYSIS
-        * */
+         * WHITE BOX TESTING
+         * */
+
+        // EQUIVALENCE PARTITIONING
+        // IN THIS TYPE OF TESTING WE DIVIDE THE INPUT DOMAIN INTO CLASSES OF DATA (VALID AND INVALID RANGE)
+        // IN THIS EXAMPLE WE WILL TAKE TWO INVALID AND ONE VALID EQUIVALENCE CLASSES.
+
+        // FIND_SEASON will accept month values range between 1 and 12
+
+        // INVALID
+        // MONTH VALUE BELOW 1
+        Assertions.assertEquals("month_invalid",seasonService.find_season("Pakistan",-5));
+
+        // VALID
+        // MONTH VALUE BETWEEN 1-12
+        Assertions.assertNotEquals("month_invalid",seasonService.find_season("Pakistan",7));
+
+        // INVALID
+        // MONTH VALUE ABOVE 12
+        Assertions.assertEquals("month_invalid",seasonService.find_season("Pakistan",14));
+
 
         // LETs TEST FOR BOUNDARY VALUE.
 

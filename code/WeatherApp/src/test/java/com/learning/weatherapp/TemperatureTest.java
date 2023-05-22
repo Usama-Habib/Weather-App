@@ -10,6 +10,24 @@ public class TemperatureTest {
     @Test
     public void testTemperature(){
 
+        // EQUIVALENCE PARTITIONING
+        // IN THIS TYPE OF TESTING WE DIVIDE THE INPUT DOMAIN INTO CLASSES OF DATA (VALID AND INVALID RANGE)
+        // IN THIS EXAMPLE WE WILL TAKE TWO INVALID AND ONE VALID EQUIVALENCE CLASSES.
+
+        // FIND_TEMPERATURE will accept temperature values range between -20 and 60. Any value above or below it will consider invalid
+
+        // INVALID
+        // TEMPERATURE VALUE BELOW -20
+        Assertions.assertEquals("temperature_invalid",temperatureService.find_temperature("Karachi","morning", -25));
+
+        // VALID
+        // TEMPERATURE VALUE BETWEEN -20 AND 60
+        Assertions.assertNotEquals("temperature_invalid",temperatureService.find_temperature("Karachi","morning", 44));
+
+        // INVALID
+        // MONTH VALUE ABOVE 60
+        Assertions.assertEquals("temperature_invalid",temperatureService.find_temperature("Karachi","morning", 74));
+
         // LETs TEST FOR BOUNDARY VALUE.
 
         // INPUT TEMPERATURE CAN'T EXCEED 60 OR CAN'T BE BELOW -25
