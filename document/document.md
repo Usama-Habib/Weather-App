@@ -278,6 +278,11 @@ Assumption: We are providing a valid country name
 |Invalid|Valid|Invalid|
 |month < 1|1-12|month > 12|
 
+||**Equivalence Partitioning (Temperature)**||
+| :-: | :-: | :-: |
+|Invalid|Valid|Invalid|
+|temperature < -20|-20-60|temperature > 60|
+
 
 - **BOUNDARY VALUE.**
 
