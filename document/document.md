@@ -273,10 +273,10 @@ In this type of testing we divide the input domain into classes of data (valid a
 
 Assumption: We are providing a valid country name 
 
-|**Equivalence Partitioning (Season)**|**Equivalence Partitioning (Temperature)**|
-| :-: | :-: |
-|Invalid|Valid|Invalid|Invalid|Valid|Invalid|
-|month < 1|1-12|month > 12|temperature < -20|-20 – 60|temperature > 60|
+|     | **Equivalence Partitioning (Season)**|    |
+| :-: | :-: | :-: | :-: |
+|Invalid|Valid|Invalid|
+|month < 1|1-12|month > 12|
 
 
 
