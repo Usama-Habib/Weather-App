@@ -309,7 +309,7 @@ Black Box Test Implementation
 
 **INVALID**: month value below 1
 ```sh
-Assertions.*assertEquals*("month_invalid",seasonService.find_season("Pakistan",-5));
+Assertions.assertEquals("month_invalid",seasonService.find_season("Pakistan",-5));
 ```
 **VALID**: month value between 1-12        
 ```sh
