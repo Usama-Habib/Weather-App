@@ -20,7 +20,7 @@ Exports: average\_temperature (float)
 
 Description: This module retrieves the average temperature for a given city from a predefined dictionary of city temperatures. It takes the city name as input and returns the average temperature.
 
-`    `**3. Module 3: compare\_temperature**
+**3. Module 3: compare\_temperature**
 
 Imports: temperature(float),average\_temperature(float) 
 
@@ -41,7 +41,7 @@ Description: This module displays the output to the user. It takes a string as i
 
 
 
-`   `All the inputs for these modules are passed as parameters. Inputs for get\_season and get\_average\_temperature are strings and integers, respectively. Outputs for get\_season include the season as a string and the season symbol as a string. Outputs for get\_average\_temperature include the average temperature as a float. The outcome for compare\_temprature is a string message. Output for display\_output is None.
+All the inputs for these modules are passed as parameters. Inputs for get\_season and get\_average\_temperature are strings and integers, respectively. Outputs for get\_season include the season as a string and the season symbol as a string. Outputs for get\_average\_temperature include the average temperature as a float. The outcome for compare\_temprature is a string message. Output for display\_output is None.
 
 
 
