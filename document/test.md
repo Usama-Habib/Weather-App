@@ -12,7 +12,7 @@ Exports: result\_text (string), result\_image (string)
 Description: This module takes a country name and a month as inputs and determines the corresponding season for the given country and month. It checks the input against a predefined dictionary of countries and their associated seasons. The module returns the season in text format (result\_text) and the file path of the graphical representation of the season (result\_image).
 
 
-`     `2. **Module 2: get\_average\_temperature**
+2. **Module 2: get\_average\_temperature**
 
 Imports: city (string),time\_of\_day (string),temperatue\_data(float)
 
@@ -28,15 +28,15 @@ Exports: message(string)
 
 Description: This module compares a specific temperature value with the average temperature of the city. If the difference between the temperature and the average temperature is more than 5 degrees Celsius, a message is returned indicating that the temperature is above or below the average. Otherwise, it returns a message that the temperature is within the normal range.
 
-`     `**4. Module 4: display\_output(output)**
+**4. Module 4: display\_output(output)**
 
-`        `Imports: Output(str)
+Imports: Output(str)
 
-`        `Exports: None
+Exports: None
 
 
 
-`        `Description: This module displays the output to the user. It takes a string as input and prints it on the screen for the user to see.
+Description: This module displays the output to the user. It takes a string as input and prints it on the screen for the user to see.
 
 
 
@@ -53,9 +53,9 @@ Implementation of the production code, reviewing and refactoring
 
 ![](Aspose.Words.0aa45581-3fe1-4216-9f6a-4b7d70fa77f3.002.png)
 
-`                        `**Figure: production code (A)**
+**Figure: production code (A)**
 
-`                           `**(Source: created on Vim)**
+**(Source: created on Vim)**
 
 
 **Result :** 
@@ -69,11 +69,11 @@ Implementation of the production code, reviewing and refactoring
 
 **Figure: Season program return textual and visual outputs.**
 
-`                                 `**![](Aspose.Words.0aa45581-3fe1-4216-9f6a-4b7d70fa77f3.005.png)**
+**![](Aspose.Words.0aa45581-3fe1-4216-9f6a-4b7d70fa77f3.005.png)**
 
-`                              `**Figure: Production code (B)**
+**Figure: Production code (B)**
 
-`                                `**( Source: created on Vim editor )**
+**( Source: created on Vim editor )**
 
 **Result:** 
 
@@ -96,7 +96,7 @@ Implementation of the production code, reviewing and refactoring
 
 - **Cohesion:** Each module performs a specific and well-defined task, contributing to the overall functionality of the program. The tasks within each module are related and have a clear purpose.  There is no evidence of poor cohesion or performing unrelated tasks within a module.
 
-- ` `**Redundancy:**  The code avoids redundancy by utilizing functions to encode reusable logic. There are no apparent complications or replications within the code.
+- **Redundancy:**  The code avoids redundancy by utilizing functions to encode reusable logic. There are no apparent complications or replications within the code.
 - **Code Reuse:** The code separates functionality into different modules, allowing them to be reused independently if needed. The code promotes code reuse by using the ‘season\_definitions’ dictionary to define seasons and reusing it within the ‘get\_season()’ function to determine the season based on the month. Similarly,  the code promotes code reuse by utilizing the ‘temperature\_data’ dictionary in the ‘get\_average\_temprature()’ function to retrieve the average temperature based on the city and time of day inputs.
 
 Here's a short review checklist to evaluate whether good code design principles have been followed:
