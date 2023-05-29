@@ -1,3 +1,21 @@
+## Weather App Documentation:
+
+** 1. Introduction:**
+
+Weather Application is a console based application, build on top of Python3.
+The application is accessible from console and return textual result back to the console. 
+Application prompt the user for input (such as city, country, temperature, daytime, and month) after that, it process the input the result accordingly.
+
+This app has two major goals.
+
+1)  Find Season of a Country.
+2)  Find City's temperature difference from its average.
+
+Following are the technologies we have use in this project:
+
+-   Python3
+-   Jupyter Notebook / SublimeTextEditor / Visual Studio Code
+
 
 **2. Modularity:** 
 
@@ -7,7 +25,7 @@ Based on scenarios A and B, find the season of the year when a country name and 
 
 Imports: 'country'(string), month (integer)
 
-Exports: result\_text (string), result\_image (string)
+Exports: result\_text (string), result\_image (string
 
 Description: This module takes a country name and a month as inputs and determines the corresponding season for the given country and month. It checks the input against a predefined dictionary of countries and their associated seasons. The module returns the season in text format (result\_text) and the file path of the graphical representation of the season (result\_image).
 
