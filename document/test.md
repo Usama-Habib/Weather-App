@@ -49,6 +49,94 @@ All the inputs for these modules are passed as parameters. Inputs for get\_seaso
 
 Implementation of the production code, reviewing and refactoring
 
+**Get Season Module:**
+
+```sh
+from PIL import Image
+
+# Define the season definitions
+season_definitions = {
+    'Summer': (12, 1, 2),
+    'Autumn': (3, 4, 5),
+    'Winter': (6, 7, 8),
+    'Spring': (9, 10, 11),
+    'Birak': (12, 1),
+    'Bunuru': (2, 3),
+    'Djeran': (4, 5),
+    'Makuru': (6, 7),
+    'Djilba': (8, 9),
+    'Kambarang': (10, 11),
+    'Fall': (9, 10, 11),
+    'Northeast-Monsoon': (12, 1, 2),
+    'Inter-Monsoon': (3, 4),
+    'Southwest-Monsoon': (5, 6, 7, 8),
+    'Second Inter-Monsoon': (9, 10, 11),
+    'First Inter-Monsoon': (2, 3, 4),
+    'Monsoon': (9, 10, 11)
+}
+
+def get_season(country, month):
+    # Define the seasons for different countries
+    seasons = {
+        'Australia': {
+            'Meteorological': ['Summer', 'Autumn', 'Winter', 'Spring'],
+            'Noongar': ['Birak', 'Bunuru', 'Djeran', 'Makuru', 'Djilba', 'Kambarang']
+        },
+        'Spain': ['Winter', 'Spring', 'Summer', 'Autumn'],
+        'Japan': ['Winter', 'Spring', 'Summer', 'Autumn'],
+        'Mauritius': ['Winter', 'Spring', 'Summer', 'Autumn'],
+        'Sri Lanka': ['Northeast-Monsoon', 'Inter-Monsoon', 'Southwest-Monsoon', 'Second Inter-Monsoon'],
+        'Malaysia': ['Northeast-Monsoon', 'First Inter-Monsoon', 'Southwest-Monsoon', 'Second Inter-Monsoon']
+        }
+
+    # Convert month string to integer
+    month = int(month)
+
+    # Find the season for the given country and month
+    season = None
+    if country in seasons:
+        country_seasons = seasons[country]
+        if country == 'Australia':
+            # Prompt the user to choose between meteorological and Noongar seasons
+            season_type = input("Choose the season type (Meteorological/Noongar): ")
+            if season_type.capitalize() in country_seasons:
+                country_seasons = country_seasons[season_type.capitalize()]
+        for s in country_seasons:
+            if month in season_definitions[s]:
+                season = s
+                break
+
+    # If season not found, return None
+    if not season:
+        return None, None
+
+    # Return season in text and graphical format
+    image_file = f"ISEimages/{season.lower()}.png"
+    return f"The season in {country} is {season}", image_file
+
+```
+
+This is how you will test the season module
+
+``` sh
+
+country = input("Enter a country name: ").capitalize()
+month = input("Enter a month (1-12): ")
+
+result = get_season(country, month)
+print(result)
+if result is None:
+    print("Season not found for the given input.")
+else:
+    result_text, result_image = result
+    print(result_text)
+    with Image.open(result_image) as img:
+        img.show()
+
+```
+
+
+
 ![](Aspose.Words.0aa45581-3fe1-4216-9f6a-4b7d70fa77f3.001.png)
 
 ![](Aspose.Words.0aa45581-3fe1-4216-9f6a-4b7d70fa77f3.002.png)
