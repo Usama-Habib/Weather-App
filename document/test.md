@@ -303,9 +303,6 @@ While the production code uses good modularity principles so far I haven’t ide
 
 
 
-
-
-
 **4. Test Design ( Black box testing )**
 
 1. **Equivalence partitioning method**
@@ -588,3 +585,8 @@ White box testing is done to ensure quality and internal structure can both be t
 
 ```
 
+**Ethical Challenges**
+
+Here are some potential ethical challenges to consider:
+- Data Accuracy and Bias: 
+  Ensuring the accuracy and reliability of the temperature data used in the program is crucial. Biases in the data, such as underrepresentation of certain regions or inaccurate measurements, can lead to misleading or unfair results.
