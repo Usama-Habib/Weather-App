@@ -135,39 +135,76 @@ else:
 
 ```
 
-
-
-![](Aspose.Words.0aa45581-3fe1-4216-9f6a-4b7d70fa77f3.001.png)
-
-![](Aspose.Words.0aa45581-3fe1-4216-9f6a-4b7d70fa77f3.002.png)
-
-**Figure: production code (A)**
-
-**(Source: created on Vim)**
-
-
 **Result :** 
 
+```sh
 
-![](Aspose.Words.0aa45581-3fe1-4216-9f6a-4b7d70fa77f3.003.png)
+Enter a country name: Spain
+Enter a month (1-12): 5
+('The season in Spain is Autumn', 'ISEimages/autumn.png')
+The season in Spain is Autumn
 
-**Figure: Season program in action.**
+```
 
-![](Aspose.Words.0aa45581-3fe1-4216-9f6a-4b7d70fa77f3.004.png)
+**Get Temperature Module:**
 
-**Figure: Season program return textual and visual outputs.**
+```sh
 
-**![](Aspose.Words.0aa45581-3fe1-4216-9f6a-4b7d70fa77f3.005.png)**
+def get_average_temperature(city, time_of_day, temperature_data):
+    city = city.lower()
+    time_of_day = time_of_day.lower()
 
-**Figure: Production code (B)**
+    if city in temperature_data and time_of_day in temperature_data[city]:
+        average_temperature = temperature_data[city][time_of_day]
+        return average_temperature
+    else:
+        return None
 
-**( Source: created on Vim editor )**
+def compare_temperature(temperature, average_temperature):
+    difference = temperature - average_temperature
+    if difference > 5:
+        message = f"Temperature is {difference}°C above average. It's significantly higher!"
+    elif difference < -5:
+        message = f"Temperature is {abs(difference)}°C below average. It's significantly lower!"
+    else:
+        message = f"Temperature is within the normal range."
+    return message
 
-**Result:** 
+def display_output(output):
+    print(output)
 
-![](Aspose.Words.0aa45581-3fe1-4216-9f6a-4b7d70fa77f3.006.png)
+temperature_data = {
+    "perth": {"morning": 18.2, "evening": 23.0},
+    "adelaide": {"morning": 16.5, "evening": 21.0},
+    "nepal": {"morning": 8.5, "evening": 12.0},
+    "kathmandu": {"morning": 6.5, "evening": 26.0},
+    "pokhara": {"morning": 4.5, "evening": 11.0}
+    
+   
+}
 
-**Figure: Temperature program in action. Return difference with an average temp.**
+```
+
+Here is how we can execute the above code
+
+```sh
+
+city = input("Enter the city: ").lower()
+time_of_day = input("Enter the time of day (morning or evening): ").lower()
+temperature = float(input("Enter the temperature reading: "))
+
+average_temperature = get_average_temperature(city, time_of_day, temperature_data)
+
+if average_temperature is not None:
+    message = compare_temperature(temperature, average_temperature)
+    output = f"Average temperature in {city} during {time_of_day}: {average_temperature}°C\n{message}"
+else:
+    output = f"No average temperature data found for {city} during {time_of_day}. Please enter a valid city."
+
+display_output(output)
+
+
+```
 
 **The production code demonstrates the use of good modularity principles. Here's how these principles are applied:**
 
@@ -258,6 +295,60 @@ While the production code uses good modularity principles so far I haven’t ide
 The category is classified into valid inputs and invalid inputs. The valid inputs with country names and month values correspond to valid combinations of country-season mappings. The expected result is the respective season texts for each country-month combination. The invalid inputs have an unrecognized country name and an invalid month value. The expected result is None since the module is expected to handle such cases by returning None. This set of test cases using the equivalence partitioning method helps cover different scenarios and ensures that the module handles both valid and invalid inputs correctly.
 
 
+Following are the test-cases we have in our program.
+
+```sh
+
+# EQUIVALENCE PARTITIONING
+    # Here we will write VALID and INVALID cases on the basis of Month and Country
+
+    def test_eqvp_month_invalid(self):
+
+        # INVALID { Month below 1 }
+        # Test case 1: invalid input - Country: Australia, Month: -3
+        
+        result_text, result_image = get_season("Australia", -3)
+        expected_text = "The season in Australia is Autumn"
+        self.assertNotEqual(result_text, expected_text, f"Expected: {expected_text}, Actual: {result_text}")
+    
+    
+    def test_eqvp_country_invalid(self):
+        
+        # INVALID { Country outside our domain }
+        # Test case 2: invalid input - Country: Switzerland, Month: 3
+        
+        result_text, result_image = get_season("Switzerland", 3)
+        self.assertIsNone(result_text, f"Expected: None, Actual: {result_text}")
+
+
+    def test_eqvp_season_image_invalid(self):
+        
+        # INVALID { Country outside our domain }
+        # Test case 3: invalid input - Country: Pakistan, Month: 3
+        
+        result_text, result_image = get_season("Pakistan", 3)
+        expected_image = f"ISEimages/winter.png"
+        self.assertIsNone(result_image, f"Expected: {expected_image}, Actual: {result_image}")    
+
+    def test_eqvp_month_valid(self):
+
+        # VALID { Month between 1 - 12 }
+        # Test case 4: valid input - Country: Spain, Month: 7
+        
+        result_text, result_image = get_season("Spain", 7)
+        expected_text = "The season in Spain is Winter"
+        self.assertEqual(result_text, expected_text, f"Expected: {expected_text}, Actual: {result_text}")
+
+    def test_eqvp_month_invalid_range(self):
+
+        # INVALID { Month above 12 }
+        # Test case 5: invalid input - Country: Australia, Month: 15
+        
+        result_text, result_image = get_season("Australia", 15)
+        expected_text = None
+        self.assertIsNone(result_text, f"Expected: {expected_text}, Actual: {result_text}")
+
+```
 
 
 **Module 2: “get\_average\_temperature”**
@@ -275,12 +366,41 @@ The category is classified into valid inputs and invalid inputs. The valid input
 Here we have categories the results into Valid and Invalid outputs. The inputs to the test case include City name, day\_time, and temperature values. In the above test cases we have tried various combinations. These include; Invalid city name, Invalid temperature reading (compare to average), Invalid comparison to the expected value. On the other hand, valid combination include valid city, day\_time, temperature value etc.
 
 
+```sh
+
+    # EQUIVALENCE PARTITIONING
+    # Here we will write VALID and INVALID cases on the basis of Day Time and City
+
+    
+    def test_eqvp_city_invalid(self):
+        
+        # INVALID { City outside our domain }
+        # Test case 1: invalid input - City: Lahore, Morning
+        
+        result_text = get_average_temperature("Lahore", "Morning", temperature_data)
+        expected_text = None
+        self.assertIsNone(result_text, f"Expected: {expected_text}, Actual: {result_text}")
 
 
+    def test_eqvp_city_valid(self):
 
+        # VALID { City within the domain }
+        # Test case 2: valid input - City: Perth
+        
+        avg_temp = get_average_temperature("Perth", "Morning", temperature_data)
+        expected_text = 18.2
+        self.assertEqual(avg_temp, expected_text, f"Expected: {expected_text}, Actual: {avg_temp}")
 
+    def test_eqvp_temp_invalid(self):
 
+        # INVALID { Average Temperature above original }
+        # Test case 3:
 
+        avg_temp = get_average_temperature("Perth", "Morning", temperature_data)
+        expected_text = 22.2
+        self.assertNotEqual(avg_temp, expected_text, f"Expected: {expected_text}, Actual: {avg_temp}")
+
+```
 
 
 
@@ -298,6 +418,41 @@ In the case of boundary value analysis, our aim is to test our app’s module on
 |Invalid|<p>Country=”Spain” </p><p>Month = 13</p>|None|
 
 
+``` sh
+
+# BOUNDARY VALUE ANALYSIS
+    # Here we will write VALID and INVALID cases on the basis of Month
+
+    def test_bva_month_zero_invalid(self):
+
+        # INVALID { Month equals 0 }
+        # Test case 6: invalid input - Country: Spain, Month: 0
+        
+        result_text, result_image = get_season("Spain", 0)
+        expected_text = None
+        self.assertIsNone(result_text, f"Expected: {expected_text}, Actual: {result_text}") 
+
+    def test_bva_month_valid(self):
+
+        # INVALID { Month equals 12 }
+        # Test case 7: invalid input - Country: Spain, Month: 12
+        
+        result_text, result_image = get_season("Spain", 12)
+        expected_text = "The season in Spain is Summer"
+        self.assertEqual(result_text,expected_text, f"Expected: {expected_text}, Actual: {result_text}") 
+
+    def test_bva_month_thirteen_invalid(self):
+
+        # INVALID { Month equals 13 }
+        # Test case 8: invalid input - Country: Spain, Month: 13
+        
+        result_text, result_image = get_season("Spain", 13)
+        expected_text = None
+        self.assertIsNone(result_text, f"Expected: {expected_text}, Actual: {result_text}")   
+
+```
+
+
 **Module 2: “get\_average\_temperature”**
 
 
@@ -308,12 +463,45 @@ In the case of boundary value analysis, our aim is to test our app’s module on
 |Invalid|<p>Country=”Nepal”,</p><p>Day\_time = “Morning”,</p><p>Month = 3.4</p>|Average\_temp = 8.5|"Temperature is 5.1°C below average. It's significantly lower!"|
 
 
+```sh
+
+ # BOUNDARY VALUE ANALYSIS
+    # Here we will write VALID and INVALID cases on the basis of Month
+
+    def test_bva_cmp_temp_invalid(self):
+
+        # INVALID { Temperature equals 14 }
+        # Test case 4: invalid input - Temperature: 14
+        
+        avg_temp = get_average_temperature("Nepal", "Morning", temperature_data)
+        result_text = compare_temperature(14, avg_temp)
+        expected_text = f"Temperature is within the normal range."
+        self.assertNotEqual(result_text, expected_text, f"Expected: {expected_text}, Actual: {avg_temp}")
 
 
 
+    def test_bva_cmp_temp_valid(self):
 
+        # VALID { Temperature equals 8.4 }
+        # Test case 5: invalid input - Nepal average temperature: 8.4
+        
+        avg_temp = get_average_temperature("Nepal", "Morning", temperature_data)
+        result_text = compare_temperature(8.4, avg_temp)
+        expected_text = f"Temperature is within the normal range."
+        self.assertEqual(result_text, expected_text, f"Expected: {expected_text}, Actual: {avg_temp}")
 
+    
+    def test_bva_cmp_temp_invalid_(self):
 
+        # INVALID { Temperature equals 3.4 }
+        # Test case 6: invalid input - Nepal average temperature: 3.4
+        
+        avg_temp = get_average_temperature("Nepal", "Morning", temperature_data)
+        result_text = compare_temperature(3.4, avg_temp)
+        expected_text = f"Temperature is 5.1°C below average. It's significantly lower!"
+        self.assertEqual(result_text, expected_text, f"Expected: {expected_text}, Actual: {avg_temp}")
+
+```
 
 
 **White Box Testing**
@@ -327,6 +515,24 @@ White box testing is done to ensure quality and internal structure can both be t
 | :- | :- | :- |
 |Invalid|<p>season\_definitions</p><p>length > 0</p>|True|
 
+```sh
+
+    # 2) WHITEL BOX TEST CASES
+    # Code quality and internal structure can both be tested. For demonstration purposes, 
+    # let's imagine we run a white box test to make sure the system returns the correct records. 
+    # We'll check the size of the season data in our system i.e. it shouldn't be empty.
+
+    def test_white_box_valid(self):
+
+        # VALID { Season Records Shouldn't be empty }
+        # Test case 9: 
+
+        definition_lenth = len(season_definitions)
+        self.assertGreater(definition_lenth, 0, f"Expected: Non Zero, Actual: {definition_lenth}")  
+
+
+```
+
 
 **Module 2: “get\_average\_temperature”**
 
@@ -335,5 +541,19 @@ White box testing is done to ensure quality and internal structure can both be t
 | :- | :- | :- |
 |Invalid|Temperature\_data length > 0|True|
 
+```sh
+    # 2) WHITEL BOX TEST CASES
+    # Code quality and internal structure can both be tested. For demonstration purposes, 
+    # let's imagine we run a white box test to make sure the system returns the correct records. 
+    # We'll check the size of the season data in our system i.e. it shouldn't be empty.
 
+    def test_white_box_valid(self):
+
+        # VALID { Temperature Records Shouldn't be empty }
+        # Test case 7: 
+
+        definition_lenth = len(temperature_data)
+        self.assertGreater(definition_lenth, 0, f"Expected: Non Zero, Actual: {definition_lenth}") 
+
+```
 
