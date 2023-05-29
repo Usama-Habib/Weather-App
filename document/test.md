@@ -413,13 +413,11 @@ py testseason.py
 
 Results
 ```sh 
-
 ----------------------------------------------------------------------
 Ran 7 tests in 0.005s
 
 OK
-
-``
+```
 
 
 **Module 2: “get\_average\_temperature”**
