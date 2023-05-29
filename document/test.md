@@ -595,7 +595,8 @@ Here are some potential ethical challenges to consider:
 
 It is important to carefully address these ethical challenges by considering the impact of the program on individuals, communities, and the environment. Regularly assess and review the ethical implications of the project to ensure responsible and inclusive practices.
 
-**Professionalism** in the context of your app it refers to conducting ourself and our project in a manner that upholds high standards, integrity, and ethical behavior. Here are some aspects of professionalism that we consider throughout:
+**Professionalism** 
+In the context of your app it refers to conducting ourself and our project in a manner that upholds high standards, integrity, and ethical behavior. Here are some aspects of professionalism that we consider throughout:
 
 - Reliability
 - Communication
