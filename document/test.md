@@ -585,8 +585,25 @@ White box testing is done to ensure quality and internal structure can both be t
 
 ```
 
-**Ethical Challenges**
+**Ethical Challenges & Professionalism**
 
 Here are some potential ethical challenges to consider:
 - Data Accuracy and Bias: 
   Ensuring the accuracy and reliability of the temperature data used in the program is crucial. Biases in the data, such as underrepresentation of certain regions or inaccurate measurements, can lead to misleading or unfair results.
+- Cultural Sensitivity: Consider the cultural and social implications of associating seasons with specific countries. Avoid reinforcing stereotypes or generalizations that may perpetuate cultural biases or misrepresentations.
+- Transparency and Accountability: Clearly communicate the limitations, assumptions, and potential biases of the program to users. Be transparent about how decisions are made and ensure accountability for any issues or errors that may arise.
+
+It is important to carefully address these ethical challenges by considering the impact of the program on individuals, communities, and the environment. Regularly assess and review the ethical implications of the project to ensure responsible and inclusive practices.
+
+**Professionalism** in the context of your app it refers to conducting ourself and our project in a manner that upholds high standards, integrity, and ethical behavior. Here are some aspects of professionalism that we consider throughout:
+
+- Reliability
+- Communication
+- User-Centric Approach
+- Professional Design
+- Collaborative Approach
+- Continuous Learning and Improvement
+
+**Conclusion**
+With this we finally reach the conclusion about Weather Application. As discussed earlier, it serve two primary purposes i.e. Finds season of a country in the given month and the temperature difference with the average temperature of a city. In this Software Engineering project, we try to utilize the best industry practices starting from software design till the deployment phase. We started the journey with a basic design and then added features on top of it. We focuses on the principal of modularity, divide and conquer approach, and seperation of concern. It also demonstrates our commitment to utilizing best practices in software engineering. By adhering to professional standards, ethical considerations, and continuously improving our design and features, we have developed a reliable and user-friendly application that provides accurate season data and temperature differences. We are proud of the outcomes of this project and believe it will serve its intended purpose effectively.
+
