@@ -378,6 +378,49 @@ Following are the test-cases we have in our program.
 
 ```
 
+Running the test-cases
+
+```sh
+import unittest
+from temperature import *
+
+class TestTemperatureModule(unittest.TestCase):
+
+    def test_eqvp_city_invalid(self):
+        
+       # Test Case 1
+
+    def test_eqvp_city_valid(self):
+
+        # Test Case 2
+       
+    def test_eqvp_temp_invalid(self):
+    
+
+if __name__ == '__main__':
+    unittest.main()
+
+```
+
+Or 
+
+```sh
+
+py testtemperature.py
+py testseason.py
+
+```
+
+Results
+```sh 
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.005s
+
+OK
+
+``
+
 
 **Module 2: “get\_average\_temperature”**
 
