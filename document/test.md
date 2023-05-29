@@ -659,13 +659,13 @@ In the context of your app it refers to conducting ourself and our project in a 
 
 Let's discuss the Weather Application and explore potential ways to improve it further. Here are some areas we can focus on:
 
--- User Experience (UX): Analyze the current user interface and workflow to identify any potential usability issues or areas for improvement. Consider conducting user testing or gathering feedback to make the application more intuitive and user-friendly. As of now, it is based on console therefore it does not grab much attentation from the end user.
+- User Experience (UX): Analyze the current user interface and workflow to identify any potential usability issues or areas for improvement. Consider conducting user testing or gathering feedback to make the application more intuitive and user-friendly. As of now, it is based on console therefore it does not grab much attentation from the end user.
 
--- Data Accuracy and Sources: Continuously evaluate the accuracy and reliability of the temperature data sources used in the application. Explore options to incorporate multiple reliable data sources or meteorological APIs to ensure up-to-date and accurate information.
+- Data Accuracy and Sources: Continuously evaluate the accuracy and reliability of the temperature data sources used in the application. Explore options to incorporate multiple reliable data sources or meteorological APIs to ensure up-to-date and accurate information.
 
--- Error Handling and Validation: Enhance the application's error handling capabilities by implementing robust error messages and validation mechanisms. Inform users about any input errors and guide them towards providing correct inputs.
+- Error Handling and Validation: Enhance the application's error handling capabilities by implementing robust error messages and validation mechanisms. Inform users about any input errors and guide them towards providing correct inputs.
 
--- User Feedback and Iterative Development: Actively solicit user feedback and incorporate it into the development process. Regularly assess user needs, preferences, and emerging requirements to prioritize and plan future updates.
+- User Feedback and Iterative Development: Actively solicit user feedback and incorporate it into the development process. Regularly assess user needs, preferences, and emerging requirements to prioritize and plan future updates.
 
 **Conclusion**
 
