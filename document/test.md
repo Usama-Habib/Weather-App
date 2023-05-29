@@ -1,6 +1,6 @@
 ## Weather App Documentation:
 
-** 1. Introduction:**
+**1. Introduction:**
 
 Weather Application is a console based application, build on top of Python3.
 The application is accessible from console and return textual result back to the console. 
