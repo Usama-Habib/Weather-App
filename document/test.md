@@ -206,6 +206,19 @@ display_output(output)
 
 ```
 
+Result
+
+```sh
+
+Enter the city: Nepal
+Enter the time of day (morning or evening): morning
+Enter the temperature reading: 15
+Average temperature in nepal during morning: 8.5°C
+Temperature is 6.5°C above average. It's significantly higher!
+
+```
+
+
 **The production code demonstrates the use of good modularity principles. Here's how these principles are applied:**
 
 - **Divide and conquer:**  The code is divided into small functions to handle specific tasks. For example, the ‘get\_season()’ function is responsible for determining the season based on the country and month input. The’get\_average\_temperature()’ function retrieves the average temperature for a given city and time of day from the ‘temperature\_data’ dictionary. The ‘compare\_temperature()’ function compares the input temperature with the average temperature. The ‘display\_output()’ function is responsible for displaying the e output.
