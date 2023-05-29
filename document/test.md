@@ -596,6 +596,7 @@ Here are some potential ethical challenges to consider:
 It is important to carefully address these ethical challenges by considering the impact of the program on individuals, communities, and the environment. Regularly assess and review the ethical implications of the project to ensure responsible and inclusive practices.
 
 **Professionalism** 
+
 In the context of your app it refers to conducting ourself and our project in a manner that upholds high standards, integrity, and ethical behavior. Here are some aspects of professionalism that we consider throughout:
 
 - Reliability
@@ -606,5 +607,6 @@ In the context of your app it refers to conducting ourself and our project in a 
 - Continuous Learning and Improvement
 
 **Conclusion**
+
 With this we finally reach the conclusion about Weather Application. As discussed earlier, it serve two primary purposes i.e. Finds season of a country in the given month and the temperature difference with the average temperature of a city. In this Software Engineering project, we try to utilize the best industry practices starting from software design till the deployment phase. We started the journey with a basic design and then added features on top of it. We focuses on the principal of modularity, divide and conquer approach, and seperation of concern. It also demonstrates our commitment to utilizing best practices in software engineering. By adhering to professional standards, ethical considerations, and continuously improving our design and features, we have developed a reliable and user-friendly application that provides accurate season data and temperature differences. We are proud of the outcomes of this project and believe it will serve its intended purpose effectively.
 
