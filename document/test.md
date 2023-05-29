@@ -626,6 +626,14 @@ White box testing is done to ensure quality and internal structure can both be t
 
 ```
 
+**Test Implementation and execution**
+
+
+|**Module** |**BB test design (EP)**|**BB test design (BVA)**|**WB test design** |**EP test code (run)**|**BVA test code (run)**|**WB test code (run)**|
+| - | - | - | - | - | - | - |
+|**get\_season**|**Done**|**Done**|**Done**|**Done**|**Done**|**Done**|
+|**get\_average\_temperature**|**Done**|**Done**|**Done**|**Done**|**Done**|**Done**|
+
 **Ethical Challenges & Professionalism**
 
 Here are some potential ethical challenges to consider:
