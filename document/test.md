@@ -599,8 +599,74 @@ White box testing is done to ensure quality and internal structure can both be t
         definition_lenth = len(season_definitions)
         self.assertGreater(definition_lenth, 0, f"Expected: Non Zero, Actual: {definition_lenth}")  
 
+```
+
+```sh
+    
+    def find_months_by_season(self,season):
+        return season_definitions[season]
+    
+    def cmpT(self,t1, t2): 
+        return sorted(t1) == sorted(t2)
+    
+    def find_season_by_country_month(self,country, month):
+        # Define the seasons for different countries
+        seasons = {
+            'Australia': {
+                'Meteorological': ['Summer', 'Autumn', 'Winter', 'Spring'],
+                'Noongar': ['Birak', 'Bunuru', 'Djeran', 'Makuru', 'Djilba', 'Kambarang']
+            },
+            'Spain': ['Winter', 'Spring', 'Summer', 'Autumn'],
+            'Japan': ['Winter', 'Spring', 'Summer', 'Autumn'],
+            'Mauritius': ['Winter', 'Spring', 'Summer', 'Autumn'],
+            'Sri Lanka': ['Northeast-Monsoon', 'Inter-Monsoon', 'Southwest-Monsoon', 'Second Inter-Monsoon'],
+            'Malaysia': ['Northeast-Monsoon', 'First Inter-Monsoon', 'Southwest-Monsoon', 'Second Inter-Monsoon']
+            }
+
+        # Convert month string to integer
+        month = int(month)
+
+        # Find the season for the given country and month
+        season = None
+        if country in seasons:
+            country_seasons = seasons[country]
+            if country == 'Australia':
+                # Prompt the user to choose between meteorological and Noongar seasons
+                season_type = input("Choose the season type (Meteorological/Noongar): ")
+                if season_type.capitalize() in country_seasons:
+                    country_seasons = country_seasons[season_type.capitalize()]
+            for s in country_seasons:
+                if month in season_definitions[s]:
+                    season = s
+                    break
+
+        # If season not found, return None
+        if not season:
+            return None, None
+
+        return season
+    
+    
+    def test_white_box(self):
+
+        # Test case 10: Test the month for a given season
+        assert self.cmpT(self.find_months_by_season("Summer"), (12,1,2))
+
+        # Test case 11: Test the month for a given season
+        assert self.cmpT(self.find_months_by_season("Winter"), (6, 7, 8))
+
+        # Test case 12: Test the month for a given season
+        assert self.cmpT(self.find_months_by_season("Djeran"), (4, 5))
+
+        # Test case 13: Find the season for a given country in a given month
+        assert self.find_season_by_country_month("Spain", 2) == "Summer"
+
+        # Test case 14: Find the season for a given country in a given month
+        assert self.find_season_by_country_month("Malaysia", 2) == "Northeast-Monsoon"
 
 ```
+
+
 
 
 **Module 2: “get\_average\_temperature”**
@@ -623,6 +689,24 @@ White box testing is done to ensure quality and internal structure can both be t
 
         definition_lenth = len(temperature_data)
         self.assertGreater(definition_lenth, 0, f"Expected: Non Zero, Actual: {definition_lenth}") 
+
+```
+
+```sh
+
+    def find_temp_by_city_daytime(self, city, daytime):
+        return temperature_data[city][daytime]
+
+    def test_white_box(self):
+        
+        # Test case 8: Test the temperature reading for a given city and daytime
+        self.find_temp_by_city_daytime("perth","morning") == 18.2    
+
+        # Test case 9: Test the temperature reading for a given city and daytime
+        self.find_temp_by_city_daytime("pokhara","evening") == 26.0    
+
+        # Test case 10: Test the temperature reading for a given city and daytime
+        self.find_temp_by_city_daytime("nepal","morning") == 8.5   
 
 ```
 
